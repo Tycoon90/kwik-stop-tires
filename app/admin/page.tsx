@@ -91,7 +91,7 @@ export default async function AdminPage() {
               <p className="text-gray-500 text-sm">No orders yet.</p>
             ) : (
               <div className="space-y-3">
-                {recentOrders.map((order) => (
+                {recentOrders.map((order: any) => (
                   <div key={order.id} className="flex items-center justify-between py-2 border-b border-gray-50 last:border-0">
                     <div>
                       <p className="text-sm font-semibold text-gray-900">#{order.id.slice(-6).toUpperCase()}</p>
