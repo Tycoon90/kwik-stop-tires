@@ -1,5 +1,2 @@
-import { defineConfig } from 'prisma/config'
-
-export default defineConfig({
-  schema: 'prisma/schema.prisma',
-})
+// Prisma 5 does not use prisma.config.ts — config is in schema.prisma
+export {}
