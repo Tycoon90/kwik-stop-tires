@@ -70,7 +70,7 @@ export default async function AdminPage() {
               <p className="text-gray-500 text-sm">No appointments today.</p>
             ) : (
               <div className="space-y-3">
-                {todayAppointments.map((appt) => (
+                {todayAppointments.map((appt: any) => (
                   <div key={appt.id} className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
                     <div className="text-xs font-bold text-red-600 bg-red-50 px-2 py-1 rounded whitespace-nowrap">{appt.timeSlot}</div>
                     <div>
