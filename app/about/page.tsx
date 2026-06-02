@@ -19,28 +19,28 @@ export default function AboutPage() {
       </div>
 
       {/* Hero */}
-      <section className="bg-gray-900 text-white py-20">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl lg:text-5xl font-black mb-6">Fort Lauderdale's Trusted<br />Tire Shop Since 2010</h1>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+      <section className="bg-gray-900 text-white py-16 sm:py-20 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-5 leading-tight">Fort Lauderdale's Trusted<br />Tire Shop Since 2010</h1>
+          <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
             For over 14 years, Kwik Stop Tires has been the go-to destination for drivers in Fort Lauderdale and surrounding areas. We built our reputation on honesty, speed, and expertise.
           </p>
         </div>
       </section>
 
       {/* Mission */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-black text-gray-900 mb-6">Our Mission</h2>
-              <p className="text-gray-600 text-lg mb-4">
+      <section className="py-12 sm:py-16 bg-white px-4">
+        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 items-center">
+            <div className="text-center lg:text-left">
+              <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-5">Our Mission</h2>
+              <p className="text-gray-600 text-base sm:text-lg mb-4 leading-relaxed">
                 At Kwik Stop Tires, we believe every driver deserves quality tires at a price they can afford, installed by people they can trust.
               </p>
-              <p className="text-gray-600 mb-6">
-                We started with two bays and a promise: treat every customer like family. Today, we've grown but that promise hasn't changed. Whether you're driving a daily commuter or a weekend truck, we have the expertise and inventory to get you back on the road safely.
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                We started with two bays and a promise: treat every customer like family. Today we've grown, but that promise hasn't changed.
               </p>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3 max-w-sm mx-auto lg:mx-0">
                 {[
                   { label: '14+', desc: 'Years in Business' },
                   { label: '50K+', desc: 'Tires Installed' },
@@ -49,15 +49,15 @@ export default function AboutPage() {
                 ].map(({ label, desc }) => (
                   <div key={desc} className="bg-red-50 rounded-xl p-4 text-center">
                     <div className="text-2xl font-black text-red-600">{label}</div>
-                    <div className="text-sm text-gray-600 mt-1">{desc}</div>
+                    <div className="text-xs text-gray-600 mt-1">{desc}</div>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4 w-full max-w-sm mx-auto lg:max-w-none">
               {[Shield, Award, Users, Heart].map((Icon, i) => (
-                <div key={i} className="bg-gray-50 rounded-2xl p-6 text-center">
-                  <Icon className="w-10 h-10 text-red-600 mx-auto mb-3" />
+                <div key={i} className="bg-gray-50 rounded-2xl p-6 text-center flex flex-col items-center gap-3">
+                  <Icon className="w-10 h-10 text-red-600" />
                   <p className="font-semibold text-gray-900 text-sm">
                     {['Licensed & Insured', 'ASE Certified', 'Local Family Business', 'Community Proud'][i]}
                   </p>
@@ -69,16 +69,16 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-black text-center text-gray-900 mb-12">Meet Our Team</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <section className="py-12 sm:py-16 bg-gray-50 px-4">
+        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-black text-center text-gray-900 mb-10">Meet Our Team</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {team.map((member) => (
-              <div key={member.name} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 text-center hover:shadow-md transition-shadow">
+              <div key={member.name} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 text-center flex flex-col items-center hover:shadow-md transition-shadow">
                 <div className="text-6xl mb-4">{member.emoji}</div>
-                <h3 className="font-bold text-gray-900 mb-0.5">{member.name}</h3>
+                <h3 className="font-bold text-gray-900 mb-1">{member.name}</h3>
                 <p className="text-red-600 text-sm font-medium mb-3">{member.role}</p>
-                <p className="text-gray-600 text-sm">{member.bio}</p>
+                <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
               </div>
             ))}
           </div>
@@ -86,12 +86,12 @@ export default function AboutPage() {
       </section>
 
       {/* Certifications */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Certifications & Affiliations</h2>
-          <div className="flex flex-wrap justify-center gap-6">
+      <section className="py-10 bg-white px-4">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Certifications & Affiliations</h2>
+          <div className="flex flex-wrap justify-center gap-3">
             {['ASE Certified', 'BBB Accredited', 'TIA Member', 'Florida Licensed', 'TPMS Certified'].map((cert) => (
-              <div key={cert} className="bg-gray-50 border border-gray-200 rounded-xl px-6 py-3 text-gray-700 font-semibold text-sm">
+              <div key={cert} className="bg-gray-50 border border-gray-200 rounded-xl px-5 py-3 text-gray-700 font-semibold text-sm">
                 ✓ {cert}
               </div>
             ))}

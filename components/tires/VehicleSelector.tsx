@@ -32,47 +32,49 @@ export default function VehicleSelector() {
   }
 
   return (
-    <div className="flex flex-col sm:flex-row gap-3 items-end">
-      <div className="flex-1">
-        <label className="block text-sm font-medium text-gray-700 mb-1">Year</label>
-        <select
-          value={year}
-          onChange={(e) => setYear(e.target.value)}
-          className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-gray-900 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none"
-        >
-          <option value="">Select Year</option>
-          {years.map((y) => <option key={y} value={y}>{y}</option>)}
-        </select>
-      </div>
-      <div className="flex-1">
-        <label className="block text-sm font-medium text-gray-700 mb-1">Make</label>
-        <select
-          value={make}
-          onChange={(e) => { setMake(e.target.value); setModel('') }}
-          className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-gray-900 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none"
-        >
-          <option value="">Select Make</option>
-          {makes.map((m) => <option key={m} value={m}>{m}</option>)}
-        </select>
-      </div>
-      <div className="flex-1">
-        <label className="block text-sm font-medium text-gray-700 mb-1">Model</label>
-        <select
-          value={model}
-          onChange={(e) => setModel(e.target.value)}
-          disabled={!make}
-          className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-gray-900 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none disabled:bg-gray-100 disabled:cursor-not-allowed"
-        >
-          <option value="">Select Model</option>
-          {models.map((m) => <option key={m} value={m}>{m}</option>)}
-        </select>
+    <div className="flex flex-col gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Year</label>
+          <select
+            value={year}
+            onChange={(e) => setYear(e.target.value)}
+            className="w-full border border-gray-300 rounded-lg px-3 py-3 text-gray-900 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none text-base"
+          >
+            <option value="">Select Year</option>
+            {years.map((y) => <option key={y} value={y}>{y}</option>)}
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Make</label>
+          <select
+            value={make}
+            onChange={(e) => { setMake(e.target.value); setModel('') }}
+            className="w-full border border-gray-300 rounded-lg px-3 py-3 text-gray-900 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none text-base"
+          >
+            <option value="">Select Make</option>
+            {makes.map((m) => <option key={m} value={m}>{m}</option>)}
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Model</label>
+          <select
+            value={model}
+            onChange={(e) => setModel(e.target.value)}
+            disabled={!make}
+            className="w-full border border-gray-300 rounded-lg px-3 py-3 text-gray-900 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none disabled:bg-gray-100 disabled:cursor-not-allowed text-base"
+          >
+            <option value="">Select Model</option>
+            {models.map((m) => <option key={m} value={m}>{m}</option>)}
+          </select>
+        </div>
       </div>
       <button
         onClick={handleSearch}
         disabled={!year || !make}
-        className="flex items-center gap-2 bg-red-600 text-white px-6 py-2.5 rounded-lg font-bold hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+        className="w-full flex items-center justify-center gap-2 bg-red-600 text-white py-3 rounded-lg font-bold hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-base min-h-[48px]"
       >
-        <Search className="w-4 h-4" />
+        <Search className="w-5 h-5" />
         Find Tires
       </button>
     </div>
